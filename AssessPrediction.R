@@ -19,7 +19,7 @@ assess.prediction <- function(truth, predicted, print = TRUE) {
         cat("TNR (specificity)=TN/N: ", signif(100 * TN / N, 3), "%\n", sep = "")
         cat("PPV (precision)=TP/(TP+FP): ", signif(100 * TP / (TP + FP), 3), "%\n", sep = "")
         cat("FDR (false discovery)=1-PPV: ", signif(100 * FP / (TP + FP), 3), "%\n", sep = "")
-        cat("FPR =FP/N=1-TNR: ", signif(100 * FP / N, 3), "%\n", sep = "")
+        cat("FPR (false positive)=FP/N=1-TNR: ", signif(100 * FP / N, 3), "%\n", sep = "")
         cat("Error: ", signif(100 - (sum(truth == predicted) * 100 / length(truth)), 3), "%\n", sep = "")
     }
     error <- signif(100 - (sum(truth == predicted) * 100 / length(truth)), 3)
